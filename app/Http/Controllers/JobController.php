@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Job;
 use App\Skill;
 use Illuminate\Http\Request;
+use App\Http\Requests\JobRequest;
 
 class JobController extends Controller
 {
@@ -33,8 +34,10 @@ class JobController extends Controller
     /**
      *
      */
-    public function store()
+    public function store(Request $request)
     {
+        $job = Job::create($request->except(['_token']));
 
+        return $job;
     }
 }
