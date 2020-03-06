@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/skills', 'SkillController@index');
 Route::get('/skills/{skill}', 'SkillController@show');
+Route::post('/skills', 'SkillController@store');

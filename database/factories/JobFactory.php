@@ -11,12 +11,12 @@ $factory->define(Job::class, function (Faker $faker) {
     return [
         'title' => $faker->jobTitle,
         'salary' => $faker->randomNumber(5),
-        'description' => $faker->randomHtml(),
+        'description' => $faker->sentence(),
         'contract_type' => $faker->word(),
-        'skill_id' => function(){
+        'skill_id' => function () {
             return factory(Skill::class)->create()->id;
         },
-        'employer_id' => function(){
+        'employer_id' => function () {
             return factory(Employer::class)->create();
         }
     ];
